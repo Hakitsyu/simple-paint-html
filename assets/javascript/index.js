@@ -12,5 +12,5 @@ const height = window.innerHeight;
 canvas.width = width;
 canvas.height = height;
 
-pressingEvent.onStartPress = (x, y) => lineDrawer.init(x, y);
-pressingEvent.onPressing = (x, y) => lineDrawer.draw(x, y);
+pressingEvent.on("startpress", (x, y) => lineDrawer.init(x, y));
+pressingEvent.on("pressing", (x, y) => lineDrawer.draw(x, y));

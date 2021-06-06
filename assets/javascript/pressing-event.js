@@ -1,27 +1,27 @@
-class PressingEvent  {
+import Emitter from "./emitter.js";
+
+class PressingEvent extends Emitter {
     constructor(element) {
+        super();
         this.element = element;
         this.pressing = false;
-        this.onStartPress = (x, y) => {};
-        this.onEndPress = (x, y) => {};
-        this.onPressing = (x, y) => {};
-        this.init();
+        this.setupEvents();
     }
 
-    init = () => {
+    setupEvents = () => {
         this.element.addEventListener("mousedown", event => {
             this.pressing = true;
-            this.onStartPress(event.offsetX, event.offsetY);
+            this.emit("startpress", event.offsetX, event.offsetY);
         });
 
         this.element.addEventListener("mouseup", event => {
             this.pressing = false;
-            this.onEndPress(event.offsetX, event.offsetY);
+            this.emit("endpress", event.offsetX, event.offsetY);
         });
 
         this.element.addEventListener("mousemove", event => {
-            if (this.pressing)
-                this.onPressing(event.offsetX, event.offsetY);
+            if (this.pressing)  
+                this.emit("pressing", event.offsetX, event.offsetY);
         });
     }
 }

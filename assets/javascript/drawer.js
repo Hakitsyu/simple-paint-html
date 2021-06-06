@@ -12,8 +12,6 @@ export class LineDrawer {
 
     draw = (x, y) => {
         this.context.lineTo(x, y);
-        this.context.lineWidth = this.width;
-        this.context.strokeStyle = this.color;
         this.context.stroke();
     }
 

@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Simple Paint</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     </head>
     <body>
+        <div class="config">
+            <div class="title"><i class="fas fa-wrench"></i>Configuration</div>
+            <div class="option color">
+                <div class="title">Color</div>
+                <div class="value">
+                    <input id="color-input" type="color">
+                </div>
+            </div>
+            <div class="option size">
+                <div class="title">Size</div>
+                <div class="value">
+                    <input id="size-input" type="number" min="1">
+                </div>
+            </div>
+            <div class="footer">
+                <button id="generate-img">Generate Image</button>
+                <a href="" id="generated-img" class="generated-img hidden">Click Here</a>
+            </div>
+        </div>
         <canvas id="root"></canvas>
         <script type="module" src="assets/javascript/index.js"></script>
     </body>

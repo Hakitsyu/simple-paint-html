@@ -7,9 +7,124 @@ html, body {
 
 body {
     display: flex;
-    font-family: 'Nunito', sans-serif;
+    font-family: "Nunito", sans-serif;
+}
+
+:root {
+    --color-primary: #5152fb;
+    --color-secondary: white;
+    --color-dark: #25252d;
 }
 
 #root {
     position: absolute;
+}
+
+.config {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+    position: fixed;
+    width: 300px;
+    left: 20px;
+    top: 20px;
+    background-color: var(--color-dark);
+    color: var(--color-secondary);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.19);
+}
+
+.config .title {
+    display: flex;
+    width: 100%;
+    font-size: 16px;
+}
+
+.config > .title {
+    margin-bottom: 15px;
+}
+
+.config .title svg {
+    margin-right: 8px;
+}
+
+.config svg {
+    color: var(--color-primary);
+}
+
+.option {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.option.color .value {
+    display: flex;
+    margin-top: 5px;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+a.generated-img {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    color: var(--color-primary);
+}
+
+a.generated-img.hidden {
+    display: none;
+}
+
+input[type="number"] {
+    font-size: 16px;
+    width: 40px;
+    border: none;
+    background-color: var(--color-dark);;
+    color: var(--color-primary);
+}
+
+input[type="number"]:focus {
+    outline: none;
+}
+
+input[type="color"]{
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    height: 30px;
+    width: 30px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0; 
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 100%;
+    border: none;
+}
+
+button {
+    display: flex;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    color: var(--color-secondary);
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.4s;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    cursor: pointer;
 }
